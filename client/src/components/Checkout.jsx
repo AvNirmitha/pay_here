@@ -1,7 +1,7 @@
 import { useState, useCallback } from "react";
 
 // ─── Constants ─────────────────────────────────────────────────────────────────
-const MERCHANT_ID = "YOUR_SANDBOX_MERCHANT_ID"; // ← Replace with your Merchant ID
+const MERCHANT_ID = "1233939"; // ← Replace with your Merchant ID
 const CURRENCY = "LKR";
 
 // Pre-defined order for this demo
