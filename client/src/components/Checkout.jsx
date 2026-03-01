@@ -1,6 +1,7 @@
 import { useState, useCallback } from "react";
 
 // ─── Constants ─────────────────────────────────────────────────────────────────
+const BACKEND_URL = "https://test_pay.com"; // ← Backend base URL (no trailing slash)
 const MERCHANT_ID = "1233939"; // ← Replace with your Merchant ID
 const CURRENCY = "LKR";
 
@@ -49,7 +50,7 @@ export default function Checkout() {
                 currency: ORDER.currency,
             });
 
-            const res = await fetch(`/calculate-hash?${params.toString()}`);
+            const res = await fetch(`${BACKEND_URL}/calculate-hash?${params.toString()}`);
             if (!res.ok) {
                 const err = await res.json().catch(() => ({}));
                 throw new Error(err.error || `Server error: ${res.status}`);
@@ -92,7 +93,7 @@ export default function Checkout() {
             return_url: `${window.location.origin}/payment/success`,
             cancel_url: `${window.location.origin}/payment/cancel`,
             // ⚠️ notify_url must be a public URL (use ngrok in local dev)
-            notify_url: `${window.location.origin}/api/payments/webhook`,
+            notify_url: `${BACKEND_URL}/api/payments/webhook`,
 
             order_id: ORDER.id,
             items: ORDER.item,

@@ -6,9 +6,17 @@ export default defineConfig({
     server: {
         port: 5173,
         proxy: {
-            // Proxy API requests to backend during development
-            "/calculate-hash": "http://localhost:5000",
-            "/api": "http://localhost:5000",
+            // Proxy API requests to the backend — change BACKEND_URL in Checkout.jsx for the live URL
+            "/calculate-hash": {
+                target: "https://test_pay.com",
+                changeOrigin: true,
+                secure: true,
+            },
+            "/api": {
+                target: "https://test_pay.com",
+                changeOrigin: true,
+                secure: true,
+            },
         },
     },
 });
