@@ -8,12 +8,12 @@ export default defineConfig({
         proxy: {
             // Proxy API requests to the backend — change BACKEND_URL in Checkout.jsx for the live URL
             "/calculate-hash": {
-                target: "https://test_pay.com",
+                target: "https://test-payhere.avishkan.com",
                 changeOrigin: true,
                 secure: true,
             },
             "/api": {
-                target: "https://test_pay.com",
+                target: "https://test-payhere.avishkan.com",
                 changeOrigin: true,
                 secure: true,
             },

@@ -1,7 +1,7 @@
 import { useState, useCallback } from "react";
 
 // ─── Constants ─────────────────────────────────────────────────────────────────
-const BACKEND_URL = "https://test_pay.com"; // ← Backend base URL (no trailing slash)
+const BACKEND_URL = "https://test-payhere.avishkan.com"; // ← Backend base URL (no trailing slash)
 const MERCHANT_ID = "1233939"; // ← Replace with your Merchant ID
 const CURRENCY = "LKR";
 
