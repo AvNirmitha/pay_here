@@ -11,12 +11,14 @@ const MERCHANT_SECRET = process.env.MERCHANT_SECRET;
 // ─── Middleware ────────────────────────────────────────────────────────────────
 
 // Allow requests from the React dev server
-app.use(
-  cors({
-    origin: process.env.CLIENT_URL || "http://localhost:5173",
-    methods: ["GET", "POST"],
-  })
-);
+// app.use(
+//   cors({
+//     origin: process.env.CLIENT_URL || "http://localhost:5173",
+//     methods: ["GET", "POST"],
+//   })
+// );
+
+app.use(cors());
 
 // Global JSON parser (for all routes except the webhook)
 app.use(express.json());
